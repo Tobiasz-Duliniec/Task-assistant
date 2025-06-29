@@ -1,0 +1,47 @@
+body{
+	background-color: PowderBlue;
+}
+
+#tasks{
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+}
+
+form, form *{
+	display: grid;
+	place-items: center;
+	text-align: center;
+}
+
+
+#tasks div, footer, #status_paragraph, #input_form{
+	background-image: linear-gradient(Lavender, DarkTurquoise);
+	backdrop-filter: blur(10px);
+	border-radius: 1em;
+	border-style: solid;
+	display: grid;
+	margin: 1em;
+	padding: 1em;
+	place-items: center;
+	text-align: center;
+}
+
+header{
+	text-align: center;
+}
+
+#input_form{
+	text-align: center;
+	margin: 1em;
+}
+
+button, input{
+	margin: 0.3em;
+}
+
+@keyframes vanish_animation{
+	0% {opacity: 1;}
+	50% {opacity: 0.5;}
+	100% {opacity: 0; }
+}

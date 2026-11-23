@@ -36,7 +36,7 @@ async function addTask(){
 }
 
 function createEditForm(toEdit){
-		//Function for creating edit form
+	//Function for creating edit form
 	toEditOG = toEdit;
 	toEdit = toEdit.replace(" ", "_")
 	var editForm = document.createElement("form");
@@ -136,7 +136,7 @@ async function updateTask(toEdit){
 	var newDeadline = document.getElementById(toEdit+"_deadline").value;
 	if(validateData(newDeadline)){
 			var response = await fetch(document.URL + "update_task.php", {
-																	method: "POST",
+																	method: "PUT",
 																	body: JSON.stringify({
 																							"current_title": toEdit,
 																							"new_title": newTitle,
@@ -176,7 +176,7 @@ async function deleteTask(task_to_delete){
 	//Function for deleting tasks
 	if(confirm("Are you sure you want to delete task?")){
 		var response = await fetch(document.URL + "delete_task.php", {
-																	method: "POST",
+																	method: "DELETE",
 																	body: JSON.stringify({"task": task_to_delete.replace(" ", "_")}),
 																	headers: {
 																		"Content-Type": "application/json",

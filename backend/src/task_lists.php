@@ -14,5 +14,9 @@
 			$results[] = json_encode($tasks_assoc);
 		}
 		echo json_encode($results);
+	}else{
+		http_response_code(500);
+		echo json_encode(array("status" => false, "reason" => "internal server error"));
+		return;
 	}
 ?>
